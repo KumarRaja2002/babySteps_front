@@ -1,0 +1,93 @@
+/* 📌 Slots Page */
+.slots-page {
+  text-align: center;
+  margin: 20px;
+}
+
+/* 📦 Slots Container (Grid Layout for Small Boxes) */
+.slots-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Flexible grid */
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* 🎯 Slot Button (Small Box Style) */
+.slot-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid #4caf50;
+  background-color: #fff;
+  color: #4caf50;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* 🖱️ Hover Effect */
+.slot-btn:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* 🚀 Loading Animation */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dot-loader {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+}
+
+.dot-loader span {
+  width: 12px;
+  height: 12px;
+  background-color: green;
+  border-radius: 50%;
+  animation: dotFlashing 1.4s infinite linear;
+}
+
+.dot-loader span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* 🎞️ Dot Loading Animation */
+@keyframes dotFlashing {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 480px) {
+  .slots-container {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Adjust for small screens */
+  }
+
+  .slot-btn {
+    width: 60px;
+    height: 40px;
+    font-size: 12px;
+  }
+}

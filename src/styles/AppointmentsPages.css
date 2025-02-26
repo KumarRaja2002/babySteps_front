@@ -1,0 +1,267 @@
+/* 📌 MAIN CONTAINER */
+.appointments-container {
+  text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* 📌 APPOINTMENT LIST (GRID) */
+.appointment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 📌 APPOINTMENT CARD */
+.appointment-card {
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #16a085;
+  max-width: 380px;
+  text-align: left;
+  position: relative;
+}
+
+/* 📌 HOVER EFFECT */
+.appointment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid #1abc9c;
+}
+
+/* 📌 PATIENT NAME */
+.appointment-card h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* 📌 APPOINTMENT INFO */
+.appointment-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 6px 0;
+}
+
+/* 📌 DOCTOR NAME */
+.appointment-card h4 {
+  color: #16a085;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 📌 SEPARATOR LINE */
+.appointment-card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  width: 80%;
+  margin: 12px 0;
+}
+
+/* 📌 NO APPOINTMENTS MESSAGE */
+.no-appointments {
+  font-size: 18px;
+  color: #999;
+  margin-top: 20px;
+}
+
+/* 📌 LOADING SPINNER */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.loading-circle {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #16a085;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 📌 MODAL STYLING */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-content label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.save-btn {
+  background-color: #16a085;
+  color: white;
+  margin-right: 10px;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #13856b;
+}
+
+.cancel-btn:hover {
+  background-color: #c0392b;
+}
+
+/* 📌 RESPONSIVE DESIGN */
+
+/* 📱 Small Devices (Phones) */
+@media (max-width: 600px) {
+  .appointment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .appointment-card {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* 📲 Tablets & Medium Devices */
+@media (max-width: 1024px) {
+  .appointment-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .appointment-card {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+}
+
+/* 💻 Large Screens */
+@media (min-width: 1280px) {
+  .appointment-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .appointment-card {
+    max-width: 400px;
+  }
+}
+
+/* 🏆 SUCCESS MESSAGE */
+.success-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* 🌀 ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
