@@ -1,11 +1,10 @@
-/* 📌 MAIN CONTAINER */
+
 .appointments-container {
   text-align: center;
   padding: 20px;
   font-family: "Arial", sans-serif;
 }
 
-/* 📌 APPOINTMENT LIST (GRID) */
 .appointment-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -14,7 +13,34 @@
   margin-top: 20px;
 }
 
-/* 📌 APPOINTMENT CARD */
+.appointment-icons {
+  display: flex;
+  gap: 15px; /* Add space between icons */
+  align-items: center;
+}
+
+.edit-icon {
+  color: blue; /* Blue color for edit/view */
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.edit-icon:hover {
+  color: darkblue;
+}
+
+.delete-icon {
+  color: red; /* Red color for delete */
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.delete-icon:hover {
+  color: darkred;
+}
+
 .appointment-card {
   background: linear-gradient(135deg, #f9f9f9, #ffffff);
   border-radius: 12px;
@@ -27,28 +53,25 @@
   position: relative;
 }
 
-/* 📌 HOVER EFFECT */
+
 .appointment-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
   border-left: 5px solid #1abc9c;
 }
 
-/* 📌 PATIENT NAME */
 .appointment-card h3 {
   color: #2c3e50;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* 📌 APPOINTMENT INFO */
 .appointment-card p {
   font-size: 14px;
   color: #555;
   margin: 6px 0;
 }
 
-/* 📌 DOCTOR NAME */
 .appointment-card h4 {
   color: #16a085;
   margin-top: 15px;
@@ -56,7 +79,6 @@
   font-weight: bold;
 }
 
-/* 📌 SEPARATOR LINE */
 .appointment-card hr {
   border: none;
   border-top: 1px solid #ddd;
@@ -64,14 +86,12 @@
   margin: 12px 0;
 }
 
-/* 📌 NO APPOINTMENTS MESSAGE */
 .no-appointments {
   font-size: 18px;
   color: #999;
   margin-top: 20px;
 }
 
-/* 📌 LOADING SPINNER */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -95,7 +115,6 @@
   100% { transform: rotate(360deg); }
 }
 
-/* 📌 MODAL STYLING */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -175,7 +194,7 @@
   background-color: #c0392b;
 }
 
-/* 📌 RESPONSIVE DESIGN */
+
 
 /* 📱 Small Devices (Phones) */
 @media (max-width: 600px) {
